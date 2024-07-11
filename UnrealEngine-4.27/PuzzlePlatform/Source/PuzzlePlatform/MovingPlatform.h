@@ -19,5 +19,16 @@ public:
 
 public:
 	UPROPERTY(EditAnywhere)
-	float Speed = 20.0f;
+	float Speed = 50.0f;
+
+	UPROPERTY(EditAnywhere, meta = (MakeEditWidget = true))
+	FVector TargetLocation;
+
+private:
+	FVector StartLocation;
+	FVector EndLocation;
+	FVector LerpStartLocation;
+	FVector LerpEndLocation;
+	float ElapsedTime = 0.0f;
+	float Distance = 0.0f;
 };
